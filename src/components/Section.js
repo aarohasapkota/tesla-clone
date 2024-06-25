@@ -22,7 +22,7 @@ function Section() {
 
       </ButtonGroup>
 
-      <DownArrow src="/images/down-arrow.svg">
+      <DownArrow src="https://aarohasapkota.github.io/tesla-clone/images/down-arrow.svg">
 
       </DownArrow>
       </Buttons>
@@ -38,7 +38,7 @@ export default Section
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/model-s.jpg');
+  background-image: url('https://aarohasapkota.github.io/tesla-clone/images/model-s.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
