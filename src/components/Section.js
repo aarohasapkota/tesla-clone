@@ -1,23 +1,24 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Section() {
+function Section({title, description, leftBtnText, rightBtnText, backgroundImg}) {
+  
   return (
-    <Wrap>
+    <Wrap bgImage= {backgroundImg}>
 
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order Online for Touchless Delivery</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
       <Buttons>
         <ButtonGroup>
 
         <LeftButton>
-            Custom Order
+            {leftBtnText}
         </LeftButton>
 
         <RightButton>
-            Existing Inventory
+            {rightBtnText}
         </RightButton>
 
       </ButtonGroup>
@@ -38,7 +39,6 @@ export default Section
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url('https://aarohasapkota.github.io/tesla-clone/images/model-s.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +46,7 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between; //vertical alignment
   align-items: center; //horizontal aligntment
+  background-image: ${props => `url("https://aarohasapkota.github.io/tesla-clone/images/${props.bgImage}")`}
 `;
 
 
@@ -57,6 +58,11 @@ text-align : center;
 const ButtonGroup = styled.div`
 display : flex;
 margin-bottom : 30px;
+@media (max-width: 768px){
+  flex-direction: column;
+}
+
+)
 `
 
 const LeftButton = styled.div`
@@ -75,7 +81,11 @@ cursor : pointer;
 margin : 8px;
 `
 
-const RightButton = styled(LeftButton)``
+const RightButton = styled(LeftButton)`
+background: white;
+opacity: 0.65;
+color: black;
+`
 
 const DownArrow = styled.img`
 //margin-top : 20px;
